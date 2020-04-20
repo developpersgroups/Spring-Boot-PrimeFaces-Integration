@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" 
+xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui" 
+template="template/template.xhtml">
+	<ui:define name="head">Spring boot application : JSF + Spring security</ui:define>
+	<ui:define name="body">
+		<div class="card" style="margin-top: 0;">
+			<div class="card-body">
+				<h3 class="card-title">Welcome, #{pageController.userName}</h3>
+				<p class="card-text">Sample Spring boot application integrated with Primefaces and Spring security.</p>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
