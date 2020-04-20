@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import net.najiboulhouch.spring.boot.entities.Groupe;
+import net.najiboulhouch.spring.boot.entities.Group;
 import net.najiboulhouch.spring.boot.entities.User;
 import net.najiboulhouch.spring.boot.repositories.GroupeRepository;
 import net.najiboulhouch.spring.boot.repositories.UserRepository;
@@ -31,10 +31,10 @@ public class SpringBooDemoApplication extends SpringBootServletInitializer {
 	@Bean
 	CommandLineRunner init( UserRepository userRepository,GroupeRepository groupeRepository, PasswordEncoder passwordEncoder ){
 		return args -> {
-			Groupe groupe = new Groupe("Administrator" , "ADM");
-			groupeRepository.save(groupe);
+			Group group = new Group("Administrator" , "ADM");
+			groupeRepository.save(group);
 			User user = new User("+212000000000", "NAJIB", "OULHOUCH", new Date(), "Mr", passwordEncoder.encode("najib")
-					, true, "najib", groupe);
+					, true, "najib", group);
 			userRepository.save(user);
 		};
 	}
